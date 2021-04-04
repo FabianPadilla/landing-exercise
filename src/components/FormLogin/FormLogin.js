@@ -33,7 +33,7 @@ const FormLogin = (props) => {
       </button>
       <p className="my-2 text-center">
         ¿no tienes una cuenta? <br />
-        <Link to="/signup" className="has-text-link">
+        <Link to="/landing-exercise/signup" className="has-text-link">
           Regístrate
         </Link>
       </p>
