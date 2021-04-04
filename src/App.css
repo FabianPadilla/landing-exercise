@@ -68,6 +68,12 @@ hr.divider {
   background-color: #474d46;
   border-color: #474d46;
 }
+.full-container {
+  background-color: #f2f5f1;
+}
+.full-container .row {
+  height: 100vh;
+}
 .background-gray {
   background-color: #f2f5f1;
 }

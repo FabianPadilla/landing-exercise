@@ -9,7 +9,7 @@ const About = () => {
     <section className="container-fluid" id="about-section">
       <div className="row align-items-center">
         <div className="col-sm unfilled">
-          <img src={about} />
+          <img src={about} alt="jardin con plantas" />
         </div>
         <div className="col-sm my-5">
           <Title subtitle="NOSOTROS" bottomDivider />

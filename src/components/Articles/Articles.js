@@ -29,8 +29,12 @@ const Articles = () => {
         <Title subtitle="ULTIMOS ARTICULOS" bottomDivider />
         <div className="container mt-5">
           <div className="row">
-            {articles.map((data) => (
-              <Card img={data.imageUrl} text={data.text} />
+            {articles.map((data, index) => (
+              <Card
+                img={data.imageUrl}
+                text={data.text}
+                key={"postId" + index}
+              />
             ))}
           </div>
         </div>
