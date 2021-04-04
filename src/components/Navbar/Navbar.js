@@ -19,7 +19,7 @@ export class Navbar extends Component {
     return (
       <nav className="navbar navbar-light navbar-expand-lg">
         <div className="container-fluid container">
-          <Link to="/" className="navbar-brand logo">
+          <Link to="/landing-exercise" className="navbar-brand logo">
             LO
           </Link>
           <div className="d-flex">
@@ -35,20 +35,26 @@ export class Navbar extends Component {
               className={`collapse navbar-collapse ${collapse ? "show" : ""}`}
             >
               <div className="navbar-nav">
-                <HashLink to="/#about-section" className="nav-link">
+                <HashLink
+                  to="/landing-exercise#about-section"
+                  className="nav-link"
+                >
                   Nosotros
                 </HashLink>
-                <HashLink to="/#articles-section" className="nav-link">
+                <HashLink
+                  to="/landing-exercise#articles-section"
+                  className="nav-link"
+                >
                   Articulos
                 </HashLink>
-                <HashLink to="/#subscribe-section">
+                <HashLink to="/landing-exercise#subscribe-section">
                   <button className="btn btn-outline-primary">
                     SUSCRIBIRSE
                   </button>
                 </HashLink>
               </div>
             </div>
-            <Link to="/login" className="nav-login">
+            <Link to="/landing-exercise/login" className="nav-login">
               <i className="far fa-user"></i>
             </Link>
           </div>

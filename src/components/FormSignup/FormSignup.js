@@ -56,7 +56,7 @@ const FormSignup = (props) => {
       </button>
       <p className="my-2 text-center">
         ¿Ya tienes una cuenta? <br />
-        <Link to="/login" className="has-text-link">
+        <Link to="/landing-exercise/login" className="has-text-link">
           Iniciar sesión
         </Link>
       </p>
