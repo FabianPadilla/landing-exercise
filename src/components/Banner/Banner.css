@@ -1,0 +1,24 @@
+#banner-home h2 {
+  font-size: 6rem;
+  font-weight: 500;
+}
+#banner-home {
+  background-image: url("../../assets/banner.jpg");
+  padding: 15rem 0px;
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.title {
+  margin: 10px auto;
+}
+@media (max-width: 990px) {
+  #banner-home {
+    background-size: auto 100%;
+  }
+}
+@media (max-width: 767px) {
+  #banner-home {
+    padding: 10rem 0px;
+  }
+}
