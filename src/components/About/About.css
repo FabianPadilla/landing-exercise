@@ -1,0 +1,10 @@
+#about-section p {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 30px;
+  color: #8a8a8a;
+}
+.unfilled {
+  padding: 0px;
+  margin: 0px;
+}

@@ -1,0 +1,23 @@
+.navbar {
+  position: absolute;
+  width: 100%;
+}
+.nav-link {
+  margin-right: 40px;
+}
+nav .navbar-collapse {
+  justify-content: flex-end !important;
+  transition: opacity 1s ease-out;
+  opacity: 1;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+}
+@media (max-width: 990px) {
+  .collapse.navbar-collapse {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+}
