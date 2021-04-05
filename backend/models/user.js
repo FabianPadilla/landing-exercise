@@ -27,7 +27,12 @@ const userSchema = new mongo.Schema({
 
 userSchema.methods.generateJWT = function () {
   return jwt.sign(
-    { id: this._id, firsName: this.FirsName },
+    {
+      id: this._id,
+      firsName: this.FirsName,
+      lastName: this.LastName,
+      email: this.Email,
+    },
     process.env.SECRET_KEY_JWT_CAT_API
   );
 };

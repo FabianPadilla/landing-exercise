@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Navbar } from "../components/Navbar/Navbar";
 import FormLogin from "../components/FormLogin/FormLogin";
+import AuthService from "../services/AuthService";
+import { Redirect } from "react-router-dom";
 
 export class LoginPage extends Component {
   state = {
     email: "",
     password: "",
+    redirect: "",
+    error: "",
   };
 
   handleChangeEmail = (e) => {
@@ -18,12 +22,26 @@ export class LoginPage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = this.state;
-    alert("email: " + email + "\n" + "password: " + password);
+    AuthService.login(email, password).then((res) => {
+      if (res.error) {
+        this.setState({ error: res.error });
+      } else {
+        if (res.Email === email) {
+          this.setState({ error: "" });
+          this.setState({
+            redirect: <Redirect to="/landing-exercise/profile/" />,
+          });
+        } else {
+          this.setState({ error: "usuario o contraseña incorrectos" });
+        }
+      }
+    });
   };
 
   render() {
     return (
       <div>
+        {this.state.redirect}
         <Navbar />
         <div className="container-fluid full-container">
           <div className="row align-items-center">
@@ -35,6 +53,7 @@ export class LoginPage extends Component {
                     handleChangeEmail={this.handleChangeEmail}
                     handleChangePassword={this.handleChangePassword}
                     handleSubmit={this.handleSubmit}
+                    error={this.state.error}
                   />
                 </div>
               </div>
