@@ -54,6 +54,14 @@ const FormSignup = (props) => {
       >
         Registrarse
       </button>
+      <div
+        className={`alert alert-danger mt-4 ${
+          props.error == "" ? "d-none" : ""
+        }`}
+        role="alert"
+      >
+        {props.error}
+      </div>
       <p className="my-2 text-center">
         ¿Ya tienes una cuenta? <br />
         <Link to="/landing-exercise/login" className="has-text-link">

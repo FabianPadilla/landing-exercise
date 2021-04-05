@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Navbar } from "../components/Navbar/Navbar";
 import FormSignup from "../components/FormSignup/FormSignup";
+import AuthService from "../services/AuthService";
+import { Redirect } from "react-router-dom";
 
 export class SignupPage extends Component {
   state = {
@@ -8,6 +10,8 @@ export class SignupPage extends Component {
     password: "",
     firsName: "",
     lastName: "",
+    error: "",
+    redirect: "",
   };
 
   handleChangeEmail = (e) => {
@@ -26,24 +30,29 @@ export class SignupPage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { email, password, firsName, lastName } = this.state;
-    alert(
-      "firsName: " +
-        firsName +
-        "\n" +
-        "lastName: " +
-        lastName +
-        "\n" +
-        "email: " +
-        email +
-        "\n" +
-        "password: " +
-        password
-    );
+    AuthService.signup(email, password, firsName, lastName)
+      .then((res) => {
+        if (res.error) {
+          this.setState({ error: res.error });
+        } else {
+          if (res.Email === email) {
+            this.setState({ error: "" });
+            alert("registrado con exito");
+            this.setState({
+              redirect: <Redirect to="/landing-exercise/profile" />,
+            });
+          }
+        }
+      })
+      .catch((err) => {
+        this.setState({ error: err.message });
+      });
   };
 
   render() {
     return (
       <div>
+        {this.state.redirect}
         <Navbar />
         <div className="container-fluid full-container">
           <div className="row align-items-center">
@@ -57,6 +66,7 @@ export class SignupPage extends Component {
                     handleChangeFirsName={this.handleChangeFirsName}
                     handleChangeLastName={this.handleChangeLastName}
                     handleSubmit={this.handleSubmit}
+                    error={this.state.error}
                   />
                 </div>
               </div>
