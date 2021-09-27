@@ -7,14 +7,14 @@ router.post("/", async (req, res) => {
   try {
     let user = await User.findOne({ Email: req.body.Email });
     if (!user)
-      return res.status(422).send({ error: "wrong username or password" });
+      return res.status(422).send({ error: "Nombre de usuario o contraseña incorrectos" });
 
     const validPassword = await bcrypt.compare(
       req.body.Password,
       user.Password
     );
     if (!validPassword)
-      return res.status(422).send({ error: "wrong username or password" });
+      return res.status(422).send({ error: "Nombre de usuario o contraseña incorrectos" });
 
     const jwt = user.generateJWT();
 
@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
 router.post("/signup", async (req, res) => {
   try {
     if (!req.body.Password)
-      return res.status(422).send({ error: "Password required" });
+      return res.status(422).send({ error: "Contraseña requerida" });
 
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(req.body.Password, salt);

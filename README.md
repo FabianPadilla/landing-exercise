@@ -15,29 +15,29 @@ demo en github page: https://fabianpadilla.github.io/landing-exercise/
 Cadena de conexión para acceder a la base de datos desde Mongodb Compass
 `mongodb+srv://Invitado_github:XI9oMGZ8s0gq6KXO@cluster0.3mqhf.mongodb.net/landing_exercise_db`
 
-# Getting Started with frontend
+# Getting Started frontend
 
 Este proyecto se inició con [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Scripts disponibles 
 
 En el directorio del proyecto /frontend/, puede ejecutar:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ejecuta la aplicación en el modo de desarrollo.\
+Abra [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+La página se recargará si realiza modificaciones.\
+También verá errores de pelusa en la consola. 
 
-# Getting Started with backend
+# Getting Started backend
 
-## Available Scripts
+## Scripts disponibles
 
 En el directorio del proyecto /backend/, puede ejecutar:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
+Ejecuta la aplicación en el modo de desarrollo.\
+Abra [http://localhost:3001](http://localhost:3001) para verlo en el navegador.
